@@ -748,7 +748,9 @@ div#preloader {
 .section-head>h2 {
   color: #333;
 }
-
+.single-services {
+  margin: 20px;
+}
 .single-services>h4 {
   color: #444;
   font-size: 24px;
@@ -758,6 +760,7 @@ div#preloader {
 .single-services>p {
   color: #333;
   font-size: 14px;
+  text-align: left;
 }
 
 /*--------------------------------------------------------------

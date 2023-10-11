@@ -243,6 +243,12 @@ div#preloader {
   font-family: Lora;
   transition: all 0.5s;
   background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  
+}
+.scrolled {
+  background-color: transparent; /* Set the background to transparent */
+  transition: background-color 0.3s; /* Add a smooth transition effect */
 }
 
 #header.header-scrolled {
@@ -317,6 +323,7 @@ div#preloader {
 */
 .navbar {
   padding: 0;
+  margin-left: auto;
 }
 
 .navbar ul {

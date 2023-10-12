@@ -170,7 +170,7 @@ button[type=submit] {
   box-shadow: none !important;
 }
 
-div#preloader {
+/* div#preloader {
   position: fixed;
   left: 0;
   top: 0;
@@ -179,7 +179,7 @@ div#preloader {
   height: 100%;
   overflow: visible;
   background: #fff url("../img/preloader.gif") no-repeat center center;
-}
+} */
 
 ::-moz-selection {
   background: #3EC1D5;
@@ -734,16 +734,31 @@ div#preloader {
   display: inline-block;
   font-size: 36px;
   line-height: 36px;
-  margin-bottom: 20px;
+  float: left;
+  margin-right: 15px;
+  
 }
 
 .section-headline.services-head>h2 {
   margin-bottom: 25px;
 }
+.services-icon svg {
+  width: 50px; /* Adjust the size as needed */
+  height: 50px; /* Adjust the size as needed */
+  border-radius: 50%;
+  background: #007BFF; /* Blue background color */
+  padding: 10px; /* Adjust the padding as needed */
+  fill: #fff; /* Icon color (white) */
+}
+
 
 .services-details {
   padding-top: 40px;
   transition: all 0.5s ease 0s;
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .services-details:hover h4,

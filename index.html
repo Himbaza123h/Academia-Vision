@@ -697,7 +697,7 @@
 
         <!-- Second Column: Contact Form -->
         <div class="col-md-6">
-          <div onsubmit="sendEmail(); reset(); return false;"  class="form contact-form">
+          <div name="submit-to-google-sheet"  class="form contact-form">
             <form method="post" class="php-email-form" id="contact-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -713,11 +713,12 @@
               </div>
               
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <span id="msg"></span>
             </form>
           </div>  
-          <script src="https://smtpjs.com/v3/smtp.js">
-          </script> 
-          <script>
+          <!-- <script src="https://smtpjs.com/v3/smtp.js"> -->
+          <!-- </script>  -->
+          <!-- <script>
             function sendEmail(){
               Email.send({
           Host : "smtp.elasticemail.com",
@@ -734,6 +735,24 @@
   message => alert("Message sent successfully")
 );
             }
+          </script> -->
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz-v3HzFuigMgDSj8rZNHmdYux6wwxoN00YEqpPI19HYrCPC0xjFQ4Z9ur6i9M-_PX4/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                  msg.innerHTML = "Thank You for send your message"
+                  setTimeout(function(){
+                    msg.innerHTML=""
+                  },5000)
+                  form.reset()
+                }
+                )
+                .catch(error => console.error('Error!', error.message))
+            })
           </script>
         </div>
       </div>

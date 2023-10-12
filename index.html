@@ -483,7 +483,7 @@
                 <h4>Student</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Applying to universities abroad was a daunting task until I discovered Academia Vision. With their expert guidance and support, I successfully secured a place at University of Rwanda. Their attention to detail and personalized approach made the entire process smooth and stress-free.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  Applying to universities abroad was a daunting task until I discovered Academia Vision. With their expert guidance and support, I successfully secured a place at  IPRC Gishari. Their attention to detail and personalized approach made the entire process smooth and stress-free.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
@@ -495,7 +495,7 @@
                 <h4>Student</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I can't thank Academia Vision Company enough for helping me achieve my dream of studying at African Leadership University(ALU). Their team's extensive knowledge of the application process and their unwavering support made it all possible. I'm now on my way to an incredible academic journey abroad.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  I can't thank Academia Vision Company enough for helping me achieve my dream of studying at Canadian Imperial College. Their team's extensive knowledge of the application process and their unwavering support made it all possible. I'm now on my way to an incredible academic journey abroad.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
@@ -519,7 +519,7 @@
                 <h4>Student</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I owe my successful application at ALU to Academia Vision. Their support extended beyond just paperwork; they guided me in selecting the right university for my career goals. Their team made a significant difference in my journey toward international education</p>
+                  I owe my successful application at KEPLER University to Academia Vision. Their support extended beyond just paperwork; they guided me in selecting the right university for my career goals. Their team made a significant difference in my journey toward international education</p>
               </div>
             </div><!-- End testimonial item -->
             <div class="swiper-slide">
@@ -529,7 +529,7 @@
                 <h4>Student</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  The journey to studying abroad became a reality with Academia Vision They not only helped me with the application process but also provided valuable insights into life at University of Rwanda. Thanks to their unwavering assistance, I am now pursuing my passion at one of the world's top universities<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  The journey to studying abroad became a reality with Academia Vision They not only helped me with the application process but also provided valuable insights into life at IPRC Kigali. Thanks to their unwavering assistance, I am now pursuing my passion at one of the world's top universities<i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
@@ -697,7 +697,7 @@
 
         <!-- Second Column: Contact Form -->
         <div class="col-md-6">
-          <div class="form contact-form">
+          <div onsubmit="sendEmail(); reset(); return false;"  class="form contact-form">
             <form method="post" class="php-email-form" id="contact-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -709,43 +709,32 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
               </div>
               
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-            <script>
-              document.getElementById("contact-form").addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent the default form submission
-                
-                // Create a FormData object to collect form data
-                var formData = new FormData(this);
-          
-                // Create an XMLHttpRequest object
-                var xhr = new XMLHttpRequest();
-          
-                // Configure the request
-                xhr.open("POST", "your_php_script.php", true);
-          
-                // Set up the callback function when the request completes
-                xhr.onload = function () {
-                  if (xhr.status == 200) {
-                    alert("Message sent successfully!");
-                    // Optionally, clear the form fields after successful submission
-                    document.getElementById("name").value = "";
-                    document.getElementById("email").value = "";
-                    document.getElementById("subject").value = "";
-                    document.getElementById("message").value = "";
-                  } else {
-                    alert("Message failed to send. Please try again.");
-                  }
-                };
-          
-                // Send the form data
-                xhr.send(formData);
-              });
-            </script>
           </div>  
+          <script src="https://smtpjs.com/v3/smtp.js">
+          </script> 
+          <script>
+            function sendEmail(){
+              Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "uwinezavestine91@gmail.com", 
+          Password : "B047EC76E7B16F3A0CA807A9DB222FDD8D77",
+          To : 'himbazaalain022@gmail.com',
+          From : document.getElementById("email").value,
+          Subject : "New contact form Enquiry",
+          Body : "Name: " + document.getElementById("name").value
+           + "<br> Email:" + document.getElementById("email").value
+           + "<br> Subject:" + document.getElementById("subject").value
+           + "<br> Message:" + document.getElementById("message").value
+}).then(
+  message => alert("Message sent successfully")
+);
+            }
+          </script>
         </div>
       </div>
     </div>
@@ -831,7 +820,6 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!--  Main JS File -->
-  <script src="assets/js/formsubmit.js"></script>
 
   <script src="assets/js/main.js"></script>
 </body>

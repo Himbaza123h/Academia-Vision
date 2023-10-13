@@ -1,7 +1,7 @@
 /**
-*  Name: eBusiness
+* Template Name: eBusiness
 * Updated: Sep 18 2023 with Bootstrap v5.3.2
-*  URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-/
+* Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -172,13 +172,13 @@
   /**
    * Hero carousel indicators
    */
-  let heroCarouselIndicators = select("#hero-carousel-indicators")
-  let heroCarouselItems = select('#heroCarousel .carousel-item', true)
+  let heroCarouselIndicators = document.querySelector("#hero-carousel-indicators");
+  let heroCarouselItems = document.querySelectorAll('#heroCarousel .carousel-item');
 
   heroCarouselItems.forEach((item, index) => {
-    (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
-      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
+    heroCarouselIndicators.innerHTML += (index === 0) ?
+      "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>" :
+      "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>";
   });
 
   /**

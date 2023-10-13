@@ -470,7 +470,15 @@
   <!-- End Faq Area -->
 
     <!-- ======= Testimonials Section ======= -->
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section-headline text-center">
+          <h2>What our clients says</h2>
+        </div>
+      </div>
+    </div>
     <div id="testimonials" class="testimonials">
+      
       <div class="container">
 
         <div class="testimonials-slider swiper">
@@ -550,9 +558,9 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row">
       <!-- Team Member 1 -->
-      <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="single-team-member">
           <div class="team-img">
             <a href="#">
@@ -567,7 +575,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-whatsapp"></i>
                   </a>
                 </li>
                 <li>
@@ -587,7 +595,7 @@
       <!-- End Team Member 1 -->
 
       <!-- Team Member 2 -->
-      <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="single-team-member">
           <div class="team-img">
             <a href="#">
@@ -602,7 +610,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-whatsapp"></i>
                   </a>
                 </li>
                 <li>
@@ -622,7 +630,7 @@
       <!-- End Team Member 2 -->
 
       <!-- Team Member 3 -->
-      <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="single-team-member">
           <div class="team-img">
             <a href="#">
@@ -637,7 +645,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-whatsapp"></i>
                   </a>
                 </li>
                 <li>
@@ -655,10 +663,46 @@
         </div>
       </div>
       <!-- End Team Member 3 -->
+
+      <!-- Team Member 4 -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="single-team-member">
+          <div class="team-img">
+            <a href="#">
+              <img src="assets/img/team/3.jpg" alt="">
+            </a>
+            <div class="team-social-icon text-center">
+              <ul>
+                <li>
+                  <a href="#">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-content text-center">
+            <h4>NSENGIMANA Claude</h4>
+            <p>Partnership Manager</p>
+          </div>
+        </div>
+      </div>
+      <!-- End Team Member 4 -->
     </div>
   </div>
 </div>
 <!-- End Team Section -->
+
 
 <!-- ======= Contact Section ======= -->
 <div id="contact" class="contact-area">
@@ -697,8 +741,8 @@
 
         <!-- Second Column: Contact Form -->
         <div class="col-md-6">
-          <div name="submit-to-google-sheet"  class="form contact-form">
-            <form method="post" class="php-email-form" id="contact-form">
+          <div  class="form contact-form">
+            <form name="submit-to-google-sheet" class="php-email-form" id="contact-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
@@ -712,48 +756,12 @@
                 <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
               </div>
               
-              <div class="text-center"><button type="submit">Send Message</button></div>
-              <span id="msg"></span>
+              <div class="text-center">
+              <button type="submit" name="myButton">Send Message</button> 
+              <span id="mesaje"></span>
+            </div>
             </form>
           </div>  
-          <!-- <script src="https://smtpjs.com/v3/smtp.js"> -->
-          <!-- </script>  -->
-          <!-- <script>
-            function sendEmail(){
-              Email.send({
-          Host : "smtp.elasticemail.com",
-          Username : "uwinezavestine91@gmail.com", 
-          Password : "B047EC76E7B16F3A0CA807A9DB222FDD8D77",
-          To : 'biganirooo@gmail.com',
-          From : document.getElementById("email").value,
-          Subject : "New contact form Enquiry",
-          Body : "Name: " + document.getElementById("name").value
-           + "<br> Email:" + document.getElementById("email").value
-           + "<br> Subject:" + document.getElementById("subject").value
-           + "<br> Message:" + document.getElementById("message").value
-}).then(
-  message => alert("Message sent successfully")
-);
-            }
-          </script> -->
-          <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz-v3HzFuigMgDSj8rZNHmdYux6wwxoN00YEqpPI19HYrCPC0xjFQ4Z9ur6i9M-_PX4/exec'
-            const form = document.forms['submit-to-google-sheet']
-            const msg = document.getElementById("msg")
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                  msg.innerHTML = "Thank You for send your message"
-                  setTimeout(function(){
-                    msg.innerHTML=""
-                  },5000)
-                  form.reset()
-                }
-                )
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
         </div>
       </div>
     </div>
@@ -801,6 +809,7 @@
               <div class="footer-icons">
                 <ul>
                   <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="https://wa.me/250788938793"><i class="bi bi-whatsapp"></i></a></li>
                   <li><a href="#"><i class="bi bi-twitter"></i></a></li>
                   <li><a href="#"><i class="bi bi-instagram"></i></a></li>
                 </ul>
@@ -841,6 +850,7 @@
   <!--  Main JS File -->
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/formsubmit.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -879,4 +889,5 @@
       });
   });
   </script>
+  
 </html>
